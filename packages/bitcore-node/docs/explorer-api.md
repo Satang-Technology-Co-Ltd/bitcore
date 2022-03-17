@@ -70,85 +70,169 @@ GET `/api/FIRO/regtest/tx?blockHeight=n&blockHash=...&limit=n`
 
 <b>Use Curl command in terminal to get a response</b>
 
+#### EVM transaction
 ```sh
-curl -v localhost:3000/api/FIRO/regtest/tx?limit=2
+curl -v localhost:3000/api/FIRO/regtest/tx?limit=1&native=false
 ```
 
 ```json
 [
    {
-      "_id":"621e668a96fce3621aa78311",
-      "txid":"bf10563bb392d24f3253c8437b3944edd4cb71db86c43b5fbf2856bdfe158346",
+      "_id":"6232e4ff6e26dcc631f98484",
+      "txid":"a016e370d8a5e4e5ce68f9e03e8faf389cc7cf97118977e5a769a92bcbbfae23",
       "network":"regtest",
       "chain":"FIRO",
-      "blockHeight":333441,
-      "blockHash":"e0c103ae6e0fbb723ef5ee9366728f90c1f5b32b773a906c4a733b3240efa4bd",
-      "blockTime":"2022-01-25T21:58:15.000Z",
-      "blockTimeNormalized":"2022-01-25T21:58:15.000Z",
-      "coinbase":true,
-      "locktime":-1,
+      "blockHeight":1661,
+      "blockHash":"a2085a25d5d217235799142fa0a16860eac41edf40455508d4aef0d5b82eb983",
+      "blockTime":"2022-03-16T13:35:55.000Z",
+      "blockTimeNormalized":"2022-03-16T13:35:55.000Z",
+      "coinbase":false,
+      "locktime":1660,
       "inputCount":1,
       "outputCount":2,
-      "size":137,
-      "fee":-1,
-      "value":10000000000,
-      "confirmations":1,
-      "fee": 1000000,
+      "size":433,
+      "fee":17179875660,
+      "value":99982820124340,
+      "weight":1732,
+      "vsize":433,
       "receipt":[
          {
-            "blockHash":"3dfefe183440ebd6b46a504af1282109176484182ac2781b14d543d8ccc1ba65",
-            "blockNumber":389382,
-            "transactionHash":"0895d9f406f257f0a66c870618a03ba5e9af0c30d19882515a1ad5467ff14c7d",
-            "transactionIndex":1,
+            "blockHash":"a2085a25d5d217235799142fa0a16860eac41edf40455508d4aef0d5b82eb983",
+            "blockNumber":1661,
+            "transactionHash":"a016e370d8a5e4e5ce68f9e03e8faf389cc7cf97118977e5a769a92bcbbfae23",
+            "transactionIndex":6,
             "outputIndex":0,
-            "from":"7f288a70fea402dcf5ddbadd155ae7545af4fae0",
-            "to":"a58a3a5afddc4cf57b0bfae6927a6139bc266e90",
-            "cumulativeGasUsed":51995,
-            "gasUsed":51995,
-            "contractAddress":"a58a3a5afddc4cf57b0bfae6927a6139bc266e90",
+            "from":"19f1aa2ec701fcca7fd20229e007bd6a9973b0fd",
+            "to":"a4a8254a1b510c68cb4493e59c5b8cda0791256e",
+            "cumulativeGasUsed":36971,
+            "gasUsed":36971,
+            "contractAddress":"a4a8254a1b510c68cb4493e59c5b8cda0791256e",
             "excepted":"None",
             "exceptedMessage":"",
-            "bloom":"00000000000000000000001000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000008000000000000000000000010000000008000000000000000000000000000000000000000006002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-            "stateRoot":"cbc70a3f5c7f8c6f05a447b449cc5108bfa4897636692d4d7690f45428588a24",
+            "bloom":"00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000004000000000000000000000000000000000004080000000000000040000000000000000000000000000000010800000000000000000000000002000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000",
+            "stateRoot":"562cba424b843c7ef6b2d0cbe6cd1bc693c5c258d3277acc35d4981e4ed15799",
             "utxoRoot":"56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
             "log":[
                {
-                  "address":"a58a3a5afddc4cf57b0bfae6927a6139bc266e90",
+                  "address":"a4a8254a1b510c68cb4493e59c5b8cda0791256e",
                   "topics":[
                      "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                     "0000000000000000000000007f288a70fea402dcf5ddbadd155ae7545af4fae0",
-                     "0000000000000000000000003bf7bdb3b6cbf3fa961840cf268f80b1798a7f8e"
+                     "00000000000000000000000019f1aa2ec701fcca7fd20229e007bd6a9973b0fd",
+                     "0000000000000000000000006483966749330323562ca015d7135831de4760a8"
                   ],
-                  "data":"00000000000000000000000000000000000000000000021e19e0c9bab2400000"
+                  "data":"0000000000000000000000000000000000000000000000000de0b6b3a7640000"
+               }
+            ],
+            "name":"Wrapped ETH",
+            "decimals":18,
+            "symbol":"WETH",
+            "totalSupply":"1000000000.000000000000000000",
+            "events":[
+               {
+                  "type":"tranfer",
+                  "from":"19f1aa2ec701fcca7fd20229e007bd6a9973b0fd",
+                  "to":"6483966749330323562ca015d7135831de4760a8",
+                  "value":1000000000000000000
                }
             ]
          }
-      ]
-   },
+      ],
+      "confirmations":2
+   }
+]
+```
+  
+#### Native transaction
+  
+```sh
+curl -v localhost:3000/api/FIRO/regtest/tx?limit=1&native=true
+```
+
+```json
+[
    {
-      "_id":"621e668a96fce3621aa78302",
-      "txid":"038e94a0bdab0139d702494e310cf35a401eabf3663757053b7fa146f370feaf",
+      "_id":"6232e4ff6e26dcc631f984b3",
+      "txid":"709847efaa7429bdde405c78bf8a5b893046e438dd8d4c88eb92b76ea5743828",
       "network":"regtest",
       "chain":"FIRO",
-      "blockHeight":333440,
-      "blockHash":"181bfd6ab7dda309dab75fdb42782ae073b83195c2cd4f6b73fd08d9684c3b45",
-      "blockTime":"2022-01-25T21:58:02.000Z",
-      "blockTimeNormalized":"2022-01-25T21:58:02.000Z",
+      "blockHeight":1662,
+      "blockHash":"e4036e830cd408220387077ff25f4a2b120e6567b3bcc226e60abb721bb5f3e2",
+      "blockTime":"2022-03-17T01:22:00.000Z",
+      "blockTimeNormalized":"2022-03-17T01:22:00.000Z",
       "coinbase":true,
       "locktime":-1,
       "inputCount":1,
       "outputCount":2,
-      "size":137,
+      "size":136,
       "fee":-1,
-      "value":10000000000,
-      "confirmations":2,
-      "fee": 1000000,
+      "value":100000000000000,
+      "weight":580,
+      "vsize":145,
       "receipt":[
          
-      ]
+      ],
+      "confirmations":1
    }
 ]
 ```
+ 
+#### Pagination
+  
+ ```sh
+curl -v localhost:3000/api/FIRO/regtest/tx?skip=100&limit=2
+```
+
+```json
+[
+   {
+      "_id":"6232e4fe6e26dcc631f97e37",
+      "txid":"caf81e754c2ab8963287ebd2f584515152081971daafce91d3e0614d66c24b31",
+      "network":"regtest",
+      "chain":"FIRO",
+      "blockHeight":1585,
+      "blockHash":"1f4df8d6baa50448be86cdff783393ae169b2a0a417f829cdd21eb46ec645e3c",
+      "blockTime":"2022-03-09T19:05:07.000Z",
+      "blockTimeNormalized":"2022-03-09T19:05:07.000Z",
+      "coinbase":true,
+      "locktime":-1,
+      "inputCount":1,
+      "outputCount":2,
+      "size":136,
+      "fee":-1,
+      "value":100000000000000,
+      "weight":580,
+      "vsize":145,
+      "receipt":[
+         
+      ],
+      "confirmations":78
+   },
+   {
+      "_id":"6232e4fe6e26dcc631f97e23",
+      "txid":"5247df3200489d8210b2c71f390b0eb3e5f75584290bd84fc7f1be491c38cbc0",
+      "network":"regtest",
+      "chain":"FIRO",
+      "blockHeight":1584,
+      "blockHash":"def29a8bf76e262685ceae38c033519655e4f94d6a2b864ac573840440dcb161",
+      "blockTime":"2022-03-09T19:05:06.000Z",
+      "blockTimeNormalized":"2022-03-09T19:05:06.005Z",
+      "coinbase":true,
+      "locktime":-1,
+      "inputCount":1,
+      "outputCount":2,
+      "size":136,
+      "fee":-1,
+      "value":100000000000000,
+      "weight":580,
+      "vsize":145,
+      "receipt":[
+         
+      ],
+      "confirmations":79
+   }
+]
+```
+  
 </details>
 
 #### NOTE: to evaluate status
@@ -161,6 +245,68 @@ curl -v localhost:3000/api/FIRO/regtest/tx?limit=2
   - excepted is None
   - to isn't 0000000000000000000000000000000000000000
 4. fail to call/create contracts - excepted is not None
+
+
+### Transactions inputs/output
+
+```sh
+curl -v localhost:3000/api/FIRO/regtest/tx/a016e370d8a5e4e5ce68f9e03e8faf389cc7cf97118977e5a769a92bcbbfae23/coins
+```
+
+```json
+{
+   "inputs":[
+      {
+         "_id":"6232e4fd6e26dcc631f97b23",
+         "chain":"FIRO",
+         "network":"regtest",
+         "coinbase":true,
+         "mintIndex":0,
+         "spentTxid":"a016e370d8a5e4e5ce68f9e03e8faf389cc7cf97118977e5a769a92bcbbfae23",
+         "mintTxid":"e0d46550b779e6d9055b104306299ef1e256809adb5a1a6822ccdf5143ba332b",
+         "mintHeight":1543,
+         "spentHeight":1661,
+         "address":"TCLPQ1z5UefsDNnM9fvP56KsSVSythFF4w",
+         "script":"76a91419f1aa2ec701fcca7fd20229e007bd6a9973b0fd88ac",
+         "value":100000000000000,
+         "confirmations":-1,
+         "sequenceNumber":4294967294
+      }
+   ],
+   "outputs":[
+      {
+         "_id":"6232e4ff6e26dcc631f98466",
+         "chain":"FIRO",
+         "network":"regtest",
+         "coinbase":false,
+         "mintIndex":0,
+         "spentTxid":"",
+         "mintTxid":"a016e370d8a5e4e5ce68f9e03e8faf389cc7cf97118977e5a769a92bcbbfae23",
+         "mintHeight":1661,
+         "spentHeight":-2,
+         "address":"false",
+         "script":"01011419f1aa2ec701fcca7fd20229e007bd6a9973b0fd4c6b6a47304402205e3884f4504f3c39c38e6ce0d46d14cf1eee3f5ae9821e46acce509c9d9a2c2f02203c546958e0c0ca94b90a8d92e5a17155b982a93f6e257abd29d22c9c44b0fa79012103af11e081bceac45952e73b2b7da391c153095a334b79d56ee3503a3917daaeb4c401040499999919012844a9059cbb0000000000000000000000006483966749330323562ca015d7135831de4760a80000000000000000000000000000000000000000000000000de0b6b3a764000014a4a8254a1b510c68cb4493e59c5b8cda0791256ec2",
+         "value":0,
+         "confirmations":-1
+      },
+      {
+         "_id":"6232e4ff6e26dcc631f9846d",
+         "chain":"FIRO",
+         "network":"regtest",
+         "coinbase":false,
+         "mintIndex":1,
+         "spentTxid":"",
+         "mintTxid":"a016e370d8a5e4e5ce68f9e03e8faf389cc7cf97118977e5a769a92bcbbfae23",
+         "mintHeight":1661,
+         "spentHeight":-2,
+         "address":"TCLPQ1z5UefsDNnM9fvP56KsSVSythFF4w",
+         "script":"76a91419f1aa2ec701fcca7fd20229e007bd6a9973b0fd88ac",
+         "value":99982820124340,
+         "confirmations":-1
+      }
+   ]
+}
+```
 
 ### Listen to new block and tx via ws
 
