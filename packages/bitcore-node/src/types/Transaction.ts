@@ -1,5 +1,13 @@
 import { ITransactionReceipt } from '../models/baseTransaction';
 
+export interface InternalTransactionJSON {
+  type: string;
+  from: string;
+  to: string;
+  value: number;
+  gasLimit: number;
+}
+
 export interface TransactionJSON {
   _id: string;
   txid: string;
@@ -17,4 +25,5 @@ export interface TransactionJSON {
   outputCount: number;
   value: number;
   receipt: Array<ITransactionReceipt>;
+  internals?: Array<InternalTransactionJSON>;
 }
